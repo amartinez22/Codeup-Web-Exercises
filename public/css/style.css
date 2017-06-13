@@ -1,0 +1,35 @@
+header {
+	margin:auto;
+}
+h3 {
+	color:black; text-decoration:underline;
+}
+body {
+	color:red; text-decoration:underline;
+	background-color: yellow;
+	background-image: url('puppy.png');
+	background-repeat: repeat;
+	font-family: "papyrus", Times, serif;
+}
+
+ul {list-style-type:square;
+}
+
+table {
+   border: 1px solid white;
+   margin: 100px auto;
+   padding: 25px;
+   text-align: left;
+   background-color: #4CAF50;
+   color: white;
+}
+
+.fancy-header {color:purple;
+
+}
+.fancy-h2 {color:purple
+
+footer {
+
+
+}

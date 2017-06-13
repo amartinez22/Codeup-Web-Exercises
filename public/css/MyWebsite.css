@@ -1,0 +1,10 @@
+#headerphoto {
+	min-height:100%;
+	min-width:1024px;
+}
+li {
+	background-color:lightgrey;	
+	}
+a {color:black;
+	text-decoration:none;
+}

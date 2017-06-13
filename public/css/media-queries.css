@@ -1,0 +1,73 @@
+/* screen sizes 320px and up */
+@media screen and (max-width:500px) {
+
+.header-img img {
+	width: 100%;
+}
+
+h1 {text-align:center;
+}
+
+.alert-info a {
+	text-align:center;
+	display:block;
+	}
+
+.nav-links li {
+	width:224px;
+	height:25px;
+	border:20;
+	text-align:center;
+	background-color:grey;
+	font-weight: bold;
+	color: blue;
+	margin-bottom:10px;
+	list-style-type:none;
+	margin-left: 35px;
+	}
+}
+/* LARGE DESKTOP */
+/* screen sizes 992px and up */
+@media screen and (min-width:700px) {
+
+.header-img img {
+	width: 100%;
+}
+h1 {
+	font-size:40;
+	float:left;
+}
+
+.alert-info a {
+	display:none;
+	}
+
+img {
+	
+	padding-top: 10px;
+}
+.nav-links {
+	font-weight:bold;
+	color: blue;
+	list-style-type:none;
+	float:right;
+	top:1.5em;
+	position:relative;
+	}
+
+.nav-links li {
+	display:inline;
+	padding: 10px;
+}
+
+.main {
+	text-align:left;
+	display:inline;
+	float:left;
+	width:40em;
+	clear:both;
+}
+.subsection {
+	width:100%;
+}
+}

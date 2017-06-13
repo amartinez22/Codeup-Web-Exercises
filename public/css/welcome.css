@@ -1,0 +1,65 @@
+body, html {
+	width:100%;
+	height:100%;
+}
+body {
+	background-size:cover;
+	background-repeat: no-repeat;
+	font-family: "Arial";
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+	text-align:center;
+}
+li {
+	bottom-border: 1px solid black;
+}
+a {
+	color: white;
+	bottom-border: 1px solid black;
+}
+.jumbotron {
+	background-color: lightgrey;
+	text-align:center;
+}
+.parallax {
+	text-align:center;
+	top-margin:5px;
+	padding:10px;
+}
+.container-fluid {
+	margin:15px;
+}
+.parallax i {
+	margin:10px;
+}
+
+ /*Style all font awesome icons
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    float:right;
+}
+
+ Add a hover effect if you want 
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand 
+
+/* Facebook
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+} */
