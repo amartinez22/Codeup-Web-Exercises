@@ -1,7 +1,8 @@
-/*Write the JS code to prompt the user for a number between 1 and 10,
+Write the JS code to prompt the user for a number between 1 and 10,
 then log to the console the multiplication table for that number. 
 For instance, if the user enters is 7, the console output should 
 look like: 
+
 var number = prompt("Enter a number between 1 and 10"); 
 
 for (var i = 1; i <=10; i++){
@@ -9,12 +10,12 @@ for (var i = 1; i <=10; i++){
 }
 
 
-/*Use a for loop and the code from the previous lessons to generate 10 
+Use a for loop and the code from the previous lessons to generate 10 
 random numbers between 20 and 200 and output to the console whether 
 each number is odd or even. For example: 
 
 
-for (var x = 1; x <= 20; x++) {
+for (var x = 1; x <= 10; x++) {
 	var numbers = Math.floor(Math.random() * 180) + 20;
 	
 	if (numbers % 2 === 0) {
@@ -25,7 +26,7 @@ for (var x = 1; x <= 20; x++) {
 }
 
 
-/*Use inline JavaScript to create a for loop that uses console.log 
+Use inline JavaScript to create a for loop that uses console.log 
 to create the output shown below. 
 
 
