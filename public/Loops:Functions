@@ -1,0 +1,235 @@
+*/ random
+var min =1
+var max = 100
+var random = math.floor(Math.random() * (max-min) + min;
+
+
+
+
+*//basic example
+var x = 1;
+while (x < 10) {
+	console.log(x);
+	++x;
+}
+
+console.log(x + " after while loop runs");
+-----------------------------------------------
+
+*//possible use cases
+while (gameRunning) {
+	drawCanvas();
+}
+
+while (timerOn) {
+	// countUp;
+}
+example 2
+var password = ""
+do {
+	password = prompt ("please enter a valid password");
+}while(PassCheck(password));
+
+do {
+	alert("welcome to our site");
+	login = confirm("Click ok to login");
+}
+
+
+*// condition never executes
+	var x= 10
+	while (x < 5) {
+	console.log(x);
+	--x;
+	}
+*condition was false since beginning so it won't run
+
+*//infinitely executes
+
+var x=5
+while (x !==4) {
+	console.log(x);
+	x++;
+}
+		*Refresh will continue forever
+
+
+
+//----------------- DO-WHILE LOOP
+
+1.)
+initialization what we are testing, 
+2.) test
+3.) iteration-changing initializing variable, incrementing or decrementing
+
+//with incrementer (i is iterator)
+for (var i = 0;i <=10; ++i) {
+	console.log(i);
+}
+
+//with decrementer 
+for (var i = 10; i >=0; --i) {
+	console.log(i);
+
+// nested for loops
+ for (var= i =0; i <=10; ++i) {
+ console.log("Badgers, Badgers");
+	 for (var j = 0; j <=1; ++j) {
+	 console.log("Mushroom");
+	 }
+ }
+
+//multiple iterators (less common)
+	for (var i = 0, j = 9; i <10); ++i, --j) {
+	console.log("Value of i: " + i "and value of j: " + j)
+	}
+
+Break/Continue
+//break
+	var y = 0;
+	while (true) {
+	if (y === 10) {
+		console.log("End of loop");
+	}
+	++y;
+	console.log(y);
+	}
+
+
+
+// web example
+
+
+
+// game example
+
+
+
+
+// continue
+skip that one number and moves on to the next
+ var y = 0;
+ while (true)
+ 	y++;
+ 	if (y=== 100) {
+ 		console.log("End of loop!");
+ 		break;
+ 	}
+ 	if (y % 2 == 0) -----if its an even #
+ 		continue;
+ 	}
+
+ 	console.log(y);
+ 	}
+
+Functions overview  -----------------
+
+What is a function
+-paragraph of code
+-a way of containing one or more statements (sentences)
+-may or may not have specifically defined input and (or) input
+-already been using functions: console.log(), parseInt(), IsNaN(),
+
+Basic syntax?
+
+function doSomething (input) {
+	
+	//stmt 1...;
+	//stmt 2...;
+	//etc
+
+	return output;
+}
+
+Best practice?
+-keep the purpose of a function specific
+-use descriptive and action/verb-oriented function names
+-keep functions consise (around 5-10 lines of code or less)
+
+***Examples----------*****
+
+function bark(someSound) {
+	return "The dog says: " + someSound;
+}
+
+console.log(bark)
+var dogSoundFunction = bark;
+console.log(dogSoundFunction("bow wow"));
+
+
+ex. 2 
+
+function addThree(number) {
+	return number + 3;
+}
+console.log(addThree(7));
+
+// creating a function
+
+	//function declaration //
+	function sayHello(greeting) {
+		return greeting;
+	}
+
+	//function expression syntax //
+	var sayHello = function(greeting) {
+		return greeing;
+	};
+
+	var doSomething = function() {
+	console.log("Do something");
+	}
+	doSomething();
+
+//assigning a function value vs. assinging the function to a variable
+var sayHelloFunction = sayHello;
+var sayHelloReturnValue = sayHello("some value");
+
+//defining parameters
+function addFive(number) {
+	return number + 5;
+}
+
+console.log(addFive(5))
+
+addGive(5); // an actual value passed into the function is called an argument
+
+//defining multiple parameters
+
+function talkingDog (dogwords, punctuation) {
+	return "The dog barks loudly, \"" + dogWords + puncutation + "\"";
+	}
+
+setTimeout(function() {
+	console.log("Hello");
+}, 1000);
+
+// OR
+
+function sayHello() {
+	console.log("Hello");
+}
+
+setTimeout(sayHello, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
