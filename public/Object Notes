@@ -1,0 +1,164 @@
+var fruit = "banana"
+fruit.split("");
+var bananaSplit = banana.split("");
+bananaSplit
+bananaSplit.push("s");
+var nameString = "Joe, Bob, Sally";
+name.String.split(",")
+nameString.split(", ");
+
+var nameString="Joe--Bobby--Sally"
+nameString.split("--");
+letters.join("");
+codeup
+letters.join(", ");
+"c, o, d, e, u , p"
+letters.join('')
+codeup
+
+Object contstcutor syntax
+
+var car = new Object();
+
+Object literal syntax (newer)
+var car = {};
+
+*typeOf car: *Will tell u it's an object *Has 3 strings associated with it
+var car = {};
+car.make = "VW";     *Assigning properties
+car.model = "Bug";   *Generating keylengths
+car.miles = 350,000;
+console.log(car); 
+console.log("My car is a " + car.make + " " + car.model + ". And it has" + car.miles + "miles.");
+
+var car = {
+"make": "VW",
+"model": "Bug",
+	
+};
+
+//Function that creates an Object--------------------------------------
+
+function makeCar (make, model, miles) {
+	var car = {};
+	car.make = make;
+	car.model = model;
+	car.miles = miles;
+	return car;
+}
+var make = prompt("Enter the make of your vehicle");
+var model = prompt("Enter the model of your vehicle");
+var miles = prompt("Enter the mileage of your vehicle");
+
+var myCar = makeCar(make,model, miles);
+console.log(myCar);
+
+
+*Can also do
+function makeCar(make, model, miles) {
+	var car = {
+	"make": make,
+	"model": model,
+	"miles":miles
+	}
+	return car;
+}
+
+
+
+
+
+
+var cars = [
+    {
+        make: "Toyota",
+        model: "Camry",
+        features: ["Automatic Windows", "Bluetooth Connectivity", "GPS Navigation"],
+        owner: {
+            name: "Jane Doe",
+            age: 30
+        }
+    },
+    {
+        make: "Honda",
+        model: "Accord",
+        features: ["Automatic Windows", "Great Gas Mileage", "AM/FM Radio"],
+        owner: {
+            name: "John Doe",
+            age: 31
+        }
+    }
+];
+
+	console.log("The first car is a " + cars[0].make + " " + cars[0].model + ".");
+	console.log("The owner of the second car is " + cars[1].owner.name + ".");
+
+	console.log("Here are all the features of all the cars:");
+	cars.forEach(function(car) {
+	    car.features.forEach(function(feature) {
+	        console.log(feature);
+	    });
+	});
+
+cars.forEach(function(car) {
+console.log("This particular " + car[0].make + "is for sale by by")
+console.log("Features:" + car.features.join(", "));
+});
+
+
+
+
+
+cars [0] = 1st object
+cars[0].make = *Toyota on console log
+
+
+JSON = javascript object notation
+
+
+
+
+var car =  {
+	"make"; "Tesla",
+	"model"; "Model S",
+	"miles"; 0,
+	"speed": 0,
+	"accelerate": function() {
+		this.speed++;
+	},
+
+	"brake":function() {
+	this.speed--;
+	},
+
+	"fullStop": function() {
+	this.speed = 0;
+	}
+}
+
+car.accelerate()
+car.speed
+
+Math
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

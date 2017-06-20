@@ -46,6 +46,53 @@
 		console.log(element);
 	});
 
+	// *For loop when you don't want to go over entire array, 
+	// skip over a number of elements,
+	// *For each loop syntax is clean
+	// iterate over every element in an array
+
+	var firstElement = names.shift();
+	names.shift();
+
+	names.unshift(firstElement);
+	// *Adds to the beginning
+
+	names.pop();
+	// removes last element from array
+
+
+	names.indexOf('Analyssa');
+
+	// locate specific index of
+
+	var bonds = ["Craig", "Brosman", "Dalton", "Moore", "Connery"];
+	// removing elements splice
+	bonds.splice(3,2);
+	console.log(bonds);
+
+	bonds.splice(bonds.indexOf("Moore"), 2);
+
+	//note that conncery contains an arrat of a single element, Not a single value
+
+	//adding elements with splice
+	bonds.splice(1, 0, "Lazenby");
+
+	bonds.splice(0, 1, "Lazenby")
+
+	//sort array
+	console.log(bonds, sort());
+
+
+
+ 	console.log(bonds, reverse());
+
+
+
+
+
+
+
+
 
 
 

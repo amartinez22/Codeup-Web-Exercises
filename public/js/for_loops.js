@@ -9,6 +9,18 @@ for (var i = 1; i <=10; i++){
 	console.log(number + "x" + i + "=" + number * i );
 }
 
+------------------------------------
+ryan answer
+
+var userInput;
+userInput = prompt("Please input a number between 1 and 10.");
+} while (isNaN(userInput) || (userInput < 1 || userInput > 10));
+
+for(var i=1; i <=10; i++) {
+	console.log(userInput + "x" + i + "=" + (i * userInput))
+}
+
+
 
 Use a for loop and the code from the previous lessons to generate 10 
 random numbers between 20 and 200 and output to the console whether 
@@ -40,6 +52,14 @@ for (var i =1; i<=10; i++) {
 	
 	console.log(repeatNumber)
 } 
+---------------------------------------
+var stringNumber;
+for (var i = 1; i <= 10; i++) {
+	stringNumber = i.toString();
+	stringNumber = stringNumber.substr(stringNumber.length -1);
+	console.log(stringNumber.repeat(i));
+
+
 
 
 /*Create a for loop that uses console.log to create the output 
@@ -48,7 +68,6 @@ shown below. */
 for (var i = 100; i>=5; i-=5) {
 	console.log(i);
 }
-
 
 
 

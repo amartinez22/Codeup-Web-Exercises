@@ -21,10 +21,9 @@ if (color === "red") {
 } else if (color ==="blue") {
 	console.log("the sky is blue");
 } else {
-	console.log("I do not know anything by that color");
+	console.log("I do not know anything by that color.");
 }
 
-color === favorite ? console.log("Matches my favorite color") : console.log("Not my favorite color");
 
 // TODO: When a color is encountered log a message that tells the color, and an object of that color.
 //       Example: Blue is the color of the sky.
@@ -33,3 +32,14 @@ color === favorite ? console.log("Matches my favorite color") : console.log("Not
 
 // TODO: Using the ternary operator, conditionally log a statement that
 //       says whether the random color matches your favorite color.
+
+color === favorite ? console.log("Matches my favorite color") : console.log("Not my favorite color");
+
+console.log("My favorite color is " + favorite);
+var outcome = (color === favorite) ? "The random color matches!" : 
+"Random and favorite colors are different";
+console.log(outcome)
+
+
+
+

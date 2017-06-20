@@ -122,9 +122,41 @@ newTotal = subtotal - (subtotal * discount);
 console.log("Your final total after discount is " + newTotal);
 
 
+/* Write some JavaScript that uses a confirm dialog to ask the user if they would like to 
+enter a number. If they click 'Ok', prompt the user for a number, then use 3 separate alerts to tell the user:
+whether the number is even or odd
+what the number plus 100 is
+if the number is negative or positive
+
+if what the user enters is not a number, use an alert to tell them that, and do not display any of the above 
+information. */
 
 
 
+var proceed = ("Would you like to enter a number?");
+
+if (proceed) {
+
+	var number = prompt("Enter a number");
+	if (isNaN(parseFloat(number)) {
+		console.log("Not a valid number.");
+	} else {
+		if (number % 2 === 0) {
+			alert("Your number is even.");
+	} 
+		else {
+		alert("Your number is odd.");
+	}
+		alert("Your number plus 100 is " + (parseFloat(number) + 100));
+
+		if (number < 0) {
+			console.log(number + " is negative");
+		} else {
+			console.log(number + " is positive");
+		}
+	}
+
+} else {
 
 
 
