@@ -1,0 +1,121 @@
+By ID-------------------------
+var cat = document.getElementById('');
+<p id="cat"
+var content = document.getElementById('content');
+console.log(content);
+
+
+
+By Class---------------------
+var listItems = document.getElementByClass('pets');
+console.log(listItems);
+*gives u node list
+li.pets, li.pets, li.pets
+
+*Pick specific index if your targeting
+console.log(listItems[0]);
+
+
+
+By Tag------------------------
+
+var paragraphs = document.getElementsByTagName('p');
+console.log(paragraphs);
+
+target
+('p')[0];
+
+get value of innerHTML-------
+console.log(cat.innerHTML);
+console.log(cat.innerText);
+
+set value of innerHTML-------
+cat.innterHTML= "";
+*removes element fromt he page
+*emptied out P tag
+
+cat.innerHTML = "<em>This is dog</em>";
+cat.innerText = "<em>This is dog</em>";
+
+appending value to innerText (works the same with innerHTML)
+cat.innerHTML += " This is also a cat";
+
+check if attribute exists-------
+var cowboy.getElementById('cowboy');
+console.log(cowboy.hasAttribute("data-1"))
+
+data attributes--------------
+console.log(cowboy.getAttribute('data-1'));
+
+cat.style.color = "red";
+var body = document.getElementByTagName('body')[0];
+body.style.["background-color"] = "blue";
+console.log(body);
+
+forms------------------
+vargetInput = function () {
+*get the username input
+var usernameInput = document.forms.login.username;
+
+return usernameInput.value
+
+Events----------------
+
+document.getElementById('enternumbers').value
+
+document.getElementsByTagName("p")
+
+var paragraphs = documet.getElementsByTagValue('p')
+
+paragraphs[0].innerText
+for(var i=0; i < paragraphs.length; i++) {
+	console.log(paragraphs[i].innerText)
+}
+
+if (i % 2 == 0)
+paragraphs[i].style["background-color"] = "blue";
+
+
+var passwordInput = document.getElementById('pasword')
+//returns a single HTML element in the form of a JS object
+passwordInput.value
+
+----------------------
+
+function convertNodeListToArray(list) {
+	var array = [];
+
+	for(var i = 0; i < list.length; i++) {
+		array.push(list[i]);
+	}
+	return array;
+}
+
+var nodeList = document.getElementsByTagName('p');
+var paragraphs = convertNodeListToArray(nodeList);
+paragraphs.forEach(function(paragraph) {
+	...
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
