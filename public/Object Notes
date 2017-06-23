@@ -142,13 +142,40 @@ car.speed
 Math
 
 
+DOM-------------
+BOM
+Browser Object Model 
+window.navigator.cookieEnabled
+window.history.back()
+window.history.forward()
+Anything Javascript can touch is in this browser
 
+window.location.href
 
+Document Object Model
+document.body.innerHTML = "Happy Unbirthday, Zach!"
+window.document
 
+var delay = 1500;
+funtion outPerDelay() {
 
+var timeoutId = setTimeout(function() {
+	console.log(delay + " number of milliseconds have passed.");
+	console.log("setTimeout takes 2 arguments. The first is a function definition and the 2nd is the delay in miliiseconds.");
+	console.log("setTimeout runs its function once and only once, like an egg timer");
+}, delay);
 
+clearTimeout(timeoutId);
+-----------------------------------
+var i=0;
+var intervalId = setInterval(function(){
+	if(i> 10) {
+		clearInterval(intervalId);
+	}
 
-
+	console.log(i)
+	i++;
+}, 500);
 
 
 

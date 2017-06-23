@@ -97,8 +97,37 @@ paragraphs.forEach(function(paragraph) {
 	...
 });
 
+var makePink = document.getElementByID("make-pink");
+var makeBlue = document.getElementByID("make-blue");
+makePink.addEventListener('click', function() {
+	var pinks = document.getElementsByClassName("pink");
+	pinks[0].style['background-color'] = "red";
+	pinks[1].style['background-color'] = "red";
+});
+
+document.getElementByID('nuke').addEventListener('click', function() {
+	document.getElementsByTagName("body")[0].innerHTML = "You've been nuked.";	
+});
 
 
+makeBlue.addEventListener('click', function () {
+	var blues = document.getElementsByClassName("blue");
+	blues[0].style['background-color'] = "green";
+	blues[1].style['background-color'] = "green";
+	blues[2].style['background-color'] = "green";
+});
+
+
+OR this way
+
+
+function changeBluesToGreen() {
+	var blues = document.getElementsByClassName("blue");
+	blues[0].style['background-color'] = "green";
+	blues[1].style['background-color'] = "green";
+	blues[2].style['background-color'] = "green";
+}
+makeBlue.addEventListener('click', changeBluesToGreen);
 
 
 

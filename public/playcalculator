@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>My HTML Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/calculator.css">
+<link rel="stylesheet" href="csss/bootstrap.css">
+</head>
+<body bgcolor= "#FFC0CB" text= "black">
+
+<div name="calculator" >
+
+<input id="firstOperator" value="" type="text" readonly/>
+<input id="secondOperator" value="" type="text" readonly/>
+<input id="lastOperator" value="" type="text" readonly/>
+<br>
+<button type="button" class="numbers btn btn-primary btn-lg">7</button>
+<button type= "button" class="numbers btn btn-primary btn-lg" >8</button>
+<button type= "button" class="numbers btn btn-primary btn-lg" >9</button>
+<button type= "button" class="operators btn btn-primary btn-lg" >+</button>
+<br>
+<button type= "button" class="numbers btn btn-primary btn-lg">4</button>
+<button type= "button" class="numbers btn btn-primary btn-lg">5</button>
+<button type= "button" class="numbers btn btn-primary btn-lg">6</button>
+<button type= "button" class="operators btn btn-primary btn-lg">-</button>
+<br>
+<button type= "button" class="numbers btn btn-primary btn-lg">3</button>
+<button type= "button" class="numbers btn btn-primary btn-lg">2</button>
+<button type= "button" class="numbers btn btn-primary btn-lg">1</button>
+<button type= "button" class="operators btn btn-primary btn-lg">*</button>
+<br> 
+<button type= "button" class="numbers btn btn-primary btn-lg">0</button>
+<button type= "button" id="clear" class="btn btn-primary btn-lg">C</button>
+<button id="equals">=</button>
+<button class="operators">/</button>
+
+<script src="js/Calculator.js"></script>
+</div>
+</form>
+</body>
+</html>

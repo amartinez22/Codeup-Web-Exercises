@@ -1,0 +1,8 @@
+body{
+	background-color: pink;
+	color:black;
+}
+.column.one-eighth {
+	width: 12.5%;
+	background-color:orchid;
+	} 
