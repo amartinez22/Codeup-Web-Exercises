@@ -5,23 +5,23 @@
      * TODO:
      * Create person object, store it in a variable named person
      */
-    //  var persons ={};
-    //  persons.firstName = "Analyssa";
-    //  persons.lastName = "Martinez";
-    //  persons.sayHello = function() {
-    //     alert("Hello " + persons.firstName + " " + persons.lastName);
-    // }
-    // persons.sayHello();
+    var persons ={};
+    persons.firstName = "Analyssa";
+    persons.lastName = "Martinez";
+    persons.sayHello = function() {
+       alert("Hello " + persons.firstName + " " + persons.lastName);
+        }
+    persons.sayHello();
 
 
-    // var person = {
-    //     "firstName": "Cody",
-    //     "lastName": "Hastings",
-    //     "sayHello":function() {
-    //     console.log("Hello" + this.firstName + " " + this.lastName);
-    //     },
-    // }
-    // person.sayHello(); 
+    var person = {
+        "firstName": "Cody",
+        "lastName": "Hastings",
+        "sayHello":function() {
+        console.log("Hello" + this.firstName + " " + this.lastName);
+        },
+    }
+    person.sayHello(); 
 
     /**
      * TODO:
@@ -58,19 +58,19 @@
      * and console.log the relevant messages for each person
      */
   
-    // var shoppers = [
-    //      {name: 'Cameron', amount: 180},
-    //      {name: 'Ryan', amount: 250},
-    //      {name: 'George', amount: 320}
-    //  ];
-    //  shoppers.forEach(function(person) {
-    //     if (person.amount > 200) {
-    //         console.log(person.name + "s total before the discount is"+ " $ " + person.amount + "." + person.name + " receives a discount of 10%!" + person.name + " total after discount is" + .9 * person.amount);
-    //     } else {
-    //         console.log(person.name + " " + "doesn't get a discount");
-    //     }
+    var shoppers = [
+         {name: 'Cameron', amount: 180},
+         {name: 'Ryan', amount: 250},
+         {name: 'George', amount: 320}
+     ];
+     shoppers.forEach(function(person) {
+        if (person.amount > 200) {
+            console.log(person.name + "s total before the discount is"+ " $ " + person.amount + "." + person.name + " receives a discount of 10%!" + person.name + " total after discount is" + .9 * person.amount);
+        } else {
+            console.log(person.name + " " + "doesn't get a discount");
+        }
 
-    // });
+    });
 
 // todo:
 // Create an array of objects that represent books.
@@ -132,18 +132,18 @@
 // {name: 'Where the wild things are', authorFirstName: 'Maurice', authorLastName:'Sendak'},
 // ]
 // log out the books array
-// books.forEach(function(books){
-// // console.log(books);
-// });
+books.forEach(function(books){
+console.log(books);
+});
  
-// todo:
-// Loop through the array of books using .forEach and print out the specified information about each one.
-// start loop here
-    // console.log("Book #" + todo);
-    // console.log("Title: " + todo);
-    // console.log("Author: " + todo);
-    // console.log("---");
-// end loop here
+todo:
+Loop through the array of books using .forEach and print out the specified information about each one.
+start loop here
+    console.log("Book #" + todo);
+    console.log("Title: " + todo);
+    console.log("Author: " + todo);
+    console.log("---");
+end loop here
 books.forEach(function(book, index){
 console.log("The Book # is " + (index + 1);
 console.log("The Book Title is " + book.Title);

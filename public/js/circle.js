@@ -14,7 +14,7 @@
 
         logInfo: function (doRounding) {
             // TODO: complete this method
-            var area = circle.getArea();
+            var area = this.getArea();
             if (doRounding === true) {
                  area = Math.round(area);
             } 
