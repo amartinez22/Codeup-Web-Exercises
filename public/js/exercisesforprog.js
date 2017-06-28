@@ -1,0 +1,2 @@
+$(document).keyup(function(event){
+	

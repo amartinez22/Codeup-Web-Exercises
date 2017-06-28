@@ -126,6 +126,8 @@ myFavRests.forEach(function(rest) {
             map: map,
             title: name
         });
+        // marker.addListener('click', toggleBounce);
+        // }
 //------------------------Info Window--------------------------
 
     var infowindow = new google.maps.InfoWindow({
@@ -134,20 +136,15 @@ myFavRests.forEach(function(rest) {
 
     infowindow.open(map, marker);
 
-//--------------------Toggle Bounce--------------------------        
+// //--------------------Toggle Bounce--------------------------        
         
-    function toggleBounce() {
-       if (marker.getAnimation() !== null) {
-         marker.setAnimation(null);
-       } else {
-         marker.setAnimation(google.maps.Animation.BOUNCE);
-       }
-   }
-   
-   marker.addListener('click', function(){
-        info.window.open(map, marker);
-        marker.addListener('click', toggleBounce);
-        });
+//     function toggleBounce() {
+//        if (marker.getAnimation() !== null) {
+//          marker.setAnimation(null);
+//        } else {
+//          marker.setAnimation(google.maps.Animation.BOUNCE);
+//        }
+//    }
 
 //---------------------------------------------------------------
     } else {
