@@ -16,41 +16,61 @@ $(document).ready(function(){
 		});
 
 		//button clicked makes last li in each ul have a yellow background	
-		$('.button1').click(function(){
-			$('ul').each(function(index, element){
-			$(element).children().last().css('background-color', 'yellow');
-			});
-		});
+		// $('.button1').click(function(){
+		// 	$('ul').each(function(index, element){
+		// 	$(element).children().last().css('background-color', 'yellow');
+		// 	});
+		// });
 
 		//when any h3 ic clicked, the li's underneath it should be bolded. 
-		$('h3').click(function(){
-			$('ul').each(function(index, element){
-			$(element).children().css('font-weight', 'bold');
-			});
-		});
+		// $('h3').click(function(){
+		// 	$('ul').each(function(index, element){
+		// 	$(element).children().css('font-weight', 'bold');
+		// 	});
+		// });
+
+// ------------------------------------------------------------------------
+		// $('h3').click(function() {
+		// 	$(this).next().children().css('font-weight', 'bold');
+		// })
+
+
 
 		//when any list item is clicked, first li of the parent ul 
 		//should have a font color of blue
 
-		$('li').click(function(){
-			$('ul').each(function(index, element){
-			$(element).children().first().css('color', 'blue');
-			});
+		// $('li').click(function(){
+		// 	$('ul').each(function(index, element){
+		// 	$(element).children().first().css('color', 'blue');
+		// 	});
+		// });
+
+		// $('li').click(function(){
+		// 	$(this).parent().children().first().css('color', 'blue');
+		// });
+
+		//When the X is clicked, hide the entire div element
+		$('span').click(function(){
+			$('div').hide();
+		});
+
+		//The ul's next to each h3 that contain facts about each 
+		//park should start out hidden and when the corresponding
+		//h3 is clicked, the display of ul should be toggling with a sliding effect. 
+
+		$('h3').click(function(){
+			$(this).next().slideToggle();
 		});
 
 
-
-	
-
-
-
-		// When any list item is clicked, the first li of the parent ul
-		// should have a font color of blue. 
+		// $('h3').click(function(){
+		// 	$(this).parent().children().hide(3000);
+		// });
 
 
 
 
-		});
+});
 
 
 

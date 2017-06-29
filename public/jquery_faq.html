@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Traversing the Dom w/ Jquery</title>
 <style>
 	.highlight {
 		background-color: #FF0;
@@ -8,9 +9,18 @@
 	.invisible {
 		display:none;
 	}
+	div {
+		border: 1px solid black;
+	}
 </style>
 </head>
 <body>
+
+<div>
+<h1>"Would you like to sign up for our newsletter?"</h1>
+<span>X</span>
+</div>
+
 <h1>10 FAQs about national parks</h1>
 <button class="button0">Facts Appear</button>
 <button class="button1">Click for Yellow</button>
@@ -49,7 +59,7 @@
 	<dd class="invisible">The largest living things in the world are in National Parks: Sequoia trees and Alaskan brown bears (the world’s largest living carnivores).</dd>
 
 	<h3>Government Canyon State Natural Area</h3>
-	<ul id="state-parks-texas">
+	<ul class="invisible">
 		<li>There are do dinosaur tracks in Government Canyon up the Joe Johnston Route!</li>
 	    <li>Because Government Canyon is a natural area, not a park, their primary mission is conservation and resource management. </li>
 	    <li>Open to the public four days a week.</li>
@@ -57,7 +67,7 @@
 	</ul>
 
 	<h3>Guadalupe River State Park</h3>
-	<ul id="state-parks-texas">
+	<ul class="invisible">
 	    <li>This park has long been one of our state’s most popular places to toss in a tube and 'float the Guadalupe.</li>
 	    <li>Many folks come here to swim, but the park is more than a great swimming hole.</li>
 	    <li>Just 30 miles away, San Antonio offers history, nature, museums, shopping and more.</li>
@@ -65,7 +75,7 @@
 	</ul>
 
 	<h3>Choke Canyon State Park</h3>
-	<ul id="state-parks-texas">
+	<ul class="invisible">
 	    <li>Choke Canyon State Park is on the shore of the Choke Canyon Reservoir, which supplies water for Corpus Christi.</li>
 	    <li>The state acquired the park in 1981 in a 50-year agreement between the Bureau of Reclamation, the city of Corpus Christi and the Nueces River Authority.</li>
 	    <li>From the scant evidence available, we know that Paleo Indians crossed the Frio River Valley more than 10,000 years ago. They were following game such as bison and mammoth.</li>
@@ -76,6 +86,6 @@
 </dl>
 </body>
 <script src="/js/jquery.js"></script>
-<script src="/js/jqueryfaq.js"></script>
+<script src="js/jqueryfaq.js"></script>
 </body>
 </html>
