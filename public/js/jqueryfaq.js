@@ -54,6 +54,10 @@ $(document).ready(function(){
 			$('div').hide();
 		});
 
+		$('span').click(function(){
+			$(this).parent().hide();
+		});
+
 		//The ul's next to each h3 that contain facts about each 
 		//park should start out hidden and when the corresponding
 		//h3 is clicked, the display of ul should be toggling with a sliding effect. 
@@ -62,14 +66,23 @@ $(document).ready(function(){
 			$(this).next().slideToggle();
 		});
 
-
 		// $('h3').click(function(){
 		// 	$(this).parent().children().hide(3000);
 		// });
+		
+		// After the user has been on the page for 8 seconds, an h2 should fade in 
+		// that asks the user to register for the site.
+		$('#register').delay(8000).fadeIn();
+		});
 
+		//
+		// Fade in register alert
+		$('#alert').hide().delay(2000).fadeIn();
 
-
-
+		//Pop up modal
+		setTimeout(function(){
+			$('myModal').modal("show");
+			}, 2000);
 });
 
 

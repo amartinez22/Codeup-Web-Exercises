@@ -1,0 +1,65 @@
+AJAX
+
+<!-- //simple request -->
+$.ajax("http://swapi.co/api.films"); 
+<!-- Request is made -->
+
+var requestObject = $.ajax("http://swapi.co/api.films");
+var data = {};
+requestObject.done(function(data){
+	dataResponse = data;
+	data.results[0].director);
+}) 
+
+
+
+.fail(function(jqXhr, status, error);
+console.log(
+console.log("Response status: " + status);
+console.log("Error object: ' + error)
+
+}
+
+.always(function(){
+	console.log("This alwas will be in the console");
+});
+
+<!-- url first argument and configuration object second argument -->
+$.ajax("https://swapi.co/api/films", {
+	"type"; "GET",
+	"data":{
+		"search":"A New Hope"
+	}
+})
+
+	function sendRequest
+
+
+	getRequest.done(function(data, status){
+	console.log(data);
+	});
+
+
+	getRequest.fail(function(jqXhr, status,error){
+		console.log(status);
+		console.log(error);
+	});
+}
+
+$.get('/data/inventory.json').done(function(data){
+$('#insertProducts').html(data[0].title)
+
+$.get('/data/inventory.json').done(function(data){
+$('#insertProducts').html(data[1].title)
+})
+
+
+
+
+
+
+
+
+
+
+
