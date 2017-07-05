@@ -42,17 +42,10 @@ $('h3').click(function(){
 //Chaining animations
 $('#animate').click(function(){
 	$('div').animate({
-		left: "400px",
-		width: "400px",
-		height: "400px",
-		borderRadius: "250px"
-	}, 2000).animate({
-		left: 0;
-		width: "200px",
-		height: "200px",
-		borderRadius: 0
+		left: "400 px",
+		width: "400 px"
 	}, 2000)
-});
+}
 
 
 

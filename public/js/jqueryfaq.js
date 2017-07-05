@@ -15,12 +15,13 @@ $(document).ready(function(){
 			$(this).css('background-color', 'yellow');
 		});
 
-		//button clicked makes last li in each ul have a yellow background	
-		// $('.button1').click(function(){
-		// 	$('ul').each(function(index, element){
-		// 	$(element).children().last().css('background-color', 'yellow');
-		// 	});
-		// });
+		button clicked makes last li in each ul have a yellow background	
+		
+		$('.button1').click(function(){
+			$('ul').each(function(index, element){
+			$(element).children().last().css('background-color', 'yellow');
+			});
+		});
 
 		//when any h3 ic clicked, the li's underneath it should be bolded. 
 		// $('h3').click(function(){
@@ -30,9 +31,9 @@ $(document).ready(function(){
 		// });
 
 // ------------------------------------------------------------------------
-		// $('h3').click(function() {
-		// 	$(this).next().children().css('font-weight', 'bold');
-		// })
+		$('h3').click(function() {
+			$(this).next().children().css('font-weight', 'bold');
+		})
 
 
 
@@ -45,9 +46,14 @@ $(document).ready(function(){
 		// 	});
 		// });
 
-		// $('li').click(function(){
-		// 	$(this).parent().children().first().css('color', 'blue');
-		// });
+		$('li').click(function(){
+			$(this).parent().children().first().css('color', 'blue');
+		});
+
+
+
+
+
 
 		//When the X is clicked, hide the entire div element
 		$('span').click(function(){

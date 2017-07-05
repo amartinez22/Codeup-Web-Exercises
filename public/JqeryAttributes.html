@@ -38,8 +38,47 @@ $('#my-element').css('width', '70px');
 
 $('#my-element').css('width', '70px').css('height', '100px');
 
+$('#my-element').css('width', '70px')
+
+
 //addClass()
 
+$('#my-element').hover(
+function(){
+	$(this).addClass('biggerBox')
+},
+function(){
+	$(this).removeClass('biggerBox');
+}
+);
+
+$('.my-element').addClass('biggerBox');
+
+//toggleClass()
+$('h1').dblclick(function(){
+	$(this).toggleClass('awesomeFont');
+});
+
+var hasAwesomeFont = $('h1').hasClass('awesomeFont');
+console.log(hasAwesomeFont); 
+*will console.log = true
+
+Using Traversing Methods
+------------------------------------------------------------
+//Highlight all sections
+$('section').css('background-color', 'yellow');
+
+//Highlight the first article
+$('article').first().css('background-color', 'yellow');
+
+//Highlight the last article
+$('article').last().css('background-color', 'yellow');
+
+//Highlight the nested element inside all article elements
+$('article').child().first().css('background-color', 'yellow');
+
+/highlight the second list item of all the ordered lists
+$('ol').children().next().css('background-color', 'yellow');
 
 
 
