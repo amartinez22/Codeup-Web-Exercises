@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">	
+    <title>My Weather Map</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<!-- CSS Styling -->
+<style>
+.day {
+	background-color: #DEE8E8;
+	border: 1px solid black;
+	text-align:center;
+}
+#map-canvas {
+	width:750px;
+	height:300px;
+	margin-left:75px;
+}
+body{
+	background-color: #9AFBFC;
+}
+</style>
+
+<!--- Body -->
+
+<body>
+<input type="text" name="latitude" id="longuserInput">Latitude<br>
+<input type="text" name="longitude" id="latuserInput">Longitude<br>
+<button>Search</button>
+
+
+<h1 class="text-center">Weather Application</h1>
+<div class="container">
+    <div class="days" id="box1"></div>
+</div>
+
+<div id="map-canvas"></div>
+
+<!-- Javascript -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7T2e-LMfI_n0MsQ8zJIhimBLTxNWjtU"></script>
+	<script src= "js/weather_map.js"></script>
+</body>
+</html>
+
+
+
+
