@@ -1,28 +1,34 @@
 (function() {
     "use strict";
 
-// function makeRequest(------) {
 
-$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-	APPID: "f8a7e861569363127811c7d09d6c19ca",
-	q: "San Antonio, TX",
-	units: "imperial",
-	cnt: "3"
+var lat=29.4241;
+var lon=-98.4936;
+
+function makeRequest() {
+	$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+		APPID: "f8a7e861569363127811c7d09d6c19ca",
+		lat: lat,
+		lon: lon,
+		units: "imperial",
+		cnt: "3"
+		
+		}).done(function(data) {
+		console.log(data);
+		addWeather(data);
+		// console.log(forecast.time.day);
+		// console.log(data.coord.lat);
+		// 29.42
+		// console.log(data.weather[0].description)
+		//few clouds
+
+		}).fail(function(jqXhr, status, error){
+		alert("There was an error! Check the console for details");
+		console.log()
+	});		
+};
 	
-	}).done(function(data) {
-	console.log(data);
-	addWeather(data);
-	// console.log(forecast.time.day);
-	// console.log(data.coord.lat);
-	// 29.42
-	// console.log(data.weather[0].description)
-	//few clouds
-
-	}).fail(function(jqXhr, status, error){
-	alert("There was an error! Check the console for details");
-	console.log()
-	});
-// };
+	makeRequest();
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -83,24 +89,26 @@ $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 
-// marker = new google.maps.Marker({
-// 	map: map,
-// 	draggable: true;
-// 	animation: google.maps.Animation.DROP,
-// 	position: {lat: latInput, lng: longInput}
-// });
-// }
 // //----------------------------San Antonio Marker-----------------------------------
 
-// 	// Create lat and long for our marker position
-// 	var findWeather = { lat: 29.4241, lng: -98.4936 };
+	// Create lat and long for our marker position
+	var findWeather = { lat: 29.4241, lng: -98.4936 };
 
-// 	// Add the marker to our existing map
-// 	var sanAntoniomarker = new google.maps.Marker({
-// 	    position: sanAntonio,
-// 	    map: map,
-// 	    title: 'Click to zoom',
-// 	});
+	// Add the marker to our existing map
+	var sanAntoniomarker = new google.maps.Marker({
+	    map: map,
+	    position: findWeather,
+	    draggable: true,
+	    animation: google.maps.Animation.DROP,
+	    title: 'Click to zoom',
+	});
+
+	google.maps.event.addListener(sanAntoniomarker,'dragend', function(){
+	 	lat=this.getPosition().lat();
+	 	lon=this.getPosition().lng();
+	 	$('#box1').html("");
+	 	makeRequest();
+	});
 
 
 
