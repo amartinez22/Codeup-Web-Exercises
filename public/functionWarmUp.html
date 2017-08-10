@@ -33,7 +33,7 @@
  
          // create a function called isOldDog() that takes in an array of objects and returns an array of booleans. A value of true will be added to the output array if the age property value of a given object is greater than 10, otherwise a value of false will be added to the output array.
 		function isOldDog(array){
-		var dogAgeList = [];
+		var outputArray = [];
 			array.forEach(function(dog) {
 				console.log(dog.age);
 				if(dog.age > 10){
@@ -65,8 +65,18 @@
 		});
 
  // // Call the makeRequest() function to test
-    	
- //    });
+    	function makeRequest(){
+    		$.get('data/dogs.json').done(function(data){
+    			console.log(isOldDog(data));
+    		}).fail(jqXhr, status, error) {
+    			console.log(error);
+    		});
+    	}
+
+ // // Call the makeRequest() function to test
+makeRequest();
+});
+
 
     </script>
  

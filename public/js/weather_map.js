@@ -16,6 +16,7 @@ function makeRequest() {
 		}).done(function(data) {
 		console.log(data);
 		addWeather(data);
+		console.log(data.main.temp);
 		// console.log(forecast.time.day);
 		// console.log(data.coord.lat);
 		// 29.42
@@ -42,7 +43,7 @@ function makeRequest() {
 
   		weather.list.forEach(function(weather){
   			firstBoxString += "<div class='col-sm-4 day'>";
-  			var date = new Date(weather.dt * 1000)
+  			var date = new Date(weather.dt * 1000);
 			firstBoxString += date.toDateString() + "<br>";
  			firstBoxString += Math.round(weather.temp.min) + "&deg" + "/" + Math.round(weather.temp.max) + "&deg" + "<br>";
  			firstBoxString += "<img src='http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png'>" + "<br>";

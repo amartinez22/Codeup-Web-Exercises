@@ -26,6 +26,11 @@ $("#insertProducts").append(htmlString);
 
 });
 
+
+
+
+
+
 var url = "/data/inventory.json";
 
 var request = $.get(url);
