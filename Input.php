@@ -30,8 +30,10 @@ class Input
         return $default;
         }
     }  
-    
-
+    public static function escape($input)
+      {
+         return htmlspecialchars(strip_tags($input));
+      }
 
         // TODO: Fill in this function
 

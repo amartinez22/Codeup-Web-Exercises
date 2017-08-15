@@ -1,9 +1,9 @@
 <?php
 class StringTransform
 {
-	public static $stringTest;
+	public static $stringTest = 'test';
 
-	public static function isLetter()
+	public static function isLetter($string)
 	{
 		if (ctype_alpha($string)){
 			return true;
@@ -12,9 +12,9 @@ class StringTransform
 		}
 	}
 
-	public static function secondCharCap()
+	public static function secondCharCap($string)
 	{
-
+	$string[1] = strtoUpper($string[1]);
 	}
 
 
