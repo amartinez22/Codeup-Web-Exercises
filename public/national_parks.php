@@ -5,38 +5,38 @@
  require_once __DIR__ . "/../Park.php";
 
 
-function getParksCount($dbc){
-	$countQuery = "SELECT COUNT(*) FROM national_parks";
- 	$stmt = $dbc->query($countQuery);
- 	$count = (int) $stmt->fetchColumn();
+// function getParksCount($dbc){
+// 	$countQuery = "SELECT COUNT(*) FROM national_parks";
+//  	$stmt = $dbc->query($countQuery);
+//  	$count = (int) $stmt->fetchColumn();
  
-	return $count;
-}
+// 	return $count;
+// }
 
-function getAllParks($dbc, $limit = 2, $offset = 0)
-{
-    $selectString = "SELECT * FROM national_parks LIMIT $limit OFFSET $offset";
-    $stmt = $dbc->query($selectString);         
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $rows;
-}
+// function getAllParks($dbc, $limit = 2, $offset = 0)
+// {
+//     $selectString = "SELECT * FROM national_parks LIMIT $limit OFFSET $offset";
+//     $stmt = $dbc->query($selectString);         
+//     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//     return $rows;
+// }
 
-function addAPark($dbc){
-    $insert = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
-        VALUES(:park_name, :park_location, :date_established, :area_in_acres, :description)";
-    $stmt = $dbc->prepare($insert);
-    $stmt->bindValue(':park_name', $_POST['park_name'], PDO::PARAM_STR);
-    $stmt->bindValue(':park_location', $_POST['park_location'], PDO::PARAM_STR);
-    $stmt->bindValue(':date_established', $_POST['date_established'], PDO::PARAM_STR);
-    $stmt->bindValue(':area_in_acres', $_POST['area_in_acres'], PDO::PARAM_STR);    
-    $stmt->bindValue(':description', $_POST['description'], PDO::PARAM_STR);    
+// function addAPark($dbc){
+//     $insert = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
+//         VALUES(:park_name, :park_location, :date_established, :area_in_acres, :description)";
+//     $stmt = $dbc->prepare($insert);
+//     $stmt->bindValue(':park_name', $_POST['park_name'], PDO::PARAM_STR);
+//     $stmt->bindValue(':park_location', $_POST['park_location'], PDO::PARAM_STR);
+//     $stmt->bindValue(':date_established', $_POST['date_established'], PDO::PARAM_STR);
+//     $stmt->bindValue(':area_in_acres', $_POST['area_in_acres'], PDO::PARAM_STR);    
+//     $stmt->bindValue(':description', $_POST['description'], PDO::PARAM_STR);    
 
 
-    $stmt->execute(); 
+//     $stmt->execute(); 
 
-    }
+//     }
 
-function pageController($dbc)
+function pageController()
 {
 	$data = [];
 
@@ -44,14 +44,23 @@ function pageController($dbc)
 
 	$recordsPerPage = Input::escape(Input::get('recordsPerPage', 4));
 
-	$parks = getAllParks($dbc, $recordsPerPage, (($page - 1) * $recordsPerPage));
+	$parks = Park::paginate($page, $recordsPerPage);
 
 	$data['parks'] = $parks;
 	$data['page'] = $page;
 	$data['recordsPerPage'] = $recordsPerPage;
-	$data['parksCount'] = getParksCount($dbc);
+	$data['parksCount'] = Park::count();
 
 	if(!empty($_POST)){
+		$park = new Park();
+
+		$park->name = Input::get('park_name');
+		$park->location =  Input::get('park_location');
+		$park->areaInAcres = Input::get('date_established');
+		$park->dateEstablished = Input::get('area_in_acres');
+		$park->description = Input::get('description');
+		$park->insert();
+
 		Park::insert();
 	}
 
@@ -60,7 +69,7 @@ function pageController($dbc)
 
 }
 
-extract(pageController($dbc));
+extract(pageController());
 
 ?>
 
@@ -96,16 +105,16 @@ extract(pageController($dbc));
 		<h4> Enter a New Park Here</h4>
 		<form method="post" action="national_parks.php">
 			<label for="insert">Park Name</label>
-			<input type="text" name="park_name" input="insert" placeholder="Enter park name" autofocus>
+			<input type="text" name="park_name" input="insert" placeholder="Enter park name" autofocus required>
 			<br>
 			<label for="insert">Park Location</label>
-			<input type="text" name="park_location" input="insert" autofocus>
+			<input type="text" name="park_location" input="insert" autofocus required>
 			<br>
 			<label for="insert">Date Park Established</label>
-			<input type="text" name="date_established" placeholder="YYYY" input="insert" autofocus>
+			<input type="text" name="date_established" placeholder="YYYY" input="insert" autofocus required>
 			<br>
 			<label for="insert">Area of Park in Acres</label>
-			<input type="text" name="area_in_acres" input="insert" autofocus>
+			<input type="text" name="area_in_acres" input="insert" autofocus required>
 			<br>
 			<label for="insert">Description</label>
 			<input type="text" name="description" input="insert" autofocus>
@@ -117,7 +126,7 @@ extract(pageController($dbc));
 	<div class="row text-center">
              
     <a class="col-lg-4" href="?page=<?=$page?>&recordsPerPage=4">4 Per Page</a>
-    <a class="col-lg-4" href="?page=<?=$page?>&recordsPerPage=10">10 Per Page</a>
+    <a class="col-lg-4" href="?page=1&recordsPerPage=10">10 Per Page</a>
     <a class="col-lg-4" href="?page=1&recordsPerPage=100">100 Per Page</a>
     </div>
 
@@ -131,20 +140,23 @@ extract(pageController($dbc));
 					<th>Location</th>
 					<th>Date Established</th>
 					<th>Area in Acres</th>
+					<th>Description</th>
 				</tr>
 			</thead>
 		<tbody>
 			<?php foreach($parks as $park): ?>
 			<tr>
-				<td><?= $park['name'] ?></td>
-				<td><?= $park['location'] ?></td>
-				<td><?= $park['date_established'] ?></td>
-				<td><?= $park['area_in_acres'] ?></td>
+				<td><?= Input::escape($park->name) ?></td>
+				<td><?= Input::escape($park->location) ?></td>
+				<td><?= Input::escape($park->dateEstablished) ?></td>
+				<td><?= Input::escape($park->areaInAcres) ?></td>
+				<td><?= Input::escape($park->description) ?></td>
 			<?php endforeach; ?>
 			</tr>
 		</tbody>
 		</table>
 	</div>
+
 
 	<?php if ($page > 1) :?>
 	<a class="btn btn-primary" href ="/national_parks.php?page=<?php echo ($page - 1) ?>&recordsPerPage=<?=$recordsPerPage?>">Previous</a>

@@ -44,6 +44,7 @@ class Park
     /**
      * establish a database connection if we do not have one
      */
+
     public static function dbConnect() {
         require 'db_connect.php';
 
@@ -116,20 +117,39 @@ class Park
         //       values
         // TODO: use the $dbc static property to query the database with the
         //       calculated limit and offset
-        $offset =($pageNo - 1) * $resultsPerPage;
+        $limit = $resultsPerPage;
+        $offset =($pageNo * $resultsPerPage) - $resultsPerPage;
         // TODO: return an array of the found Park objects
-        $selectString = "SELECT * FROM national_parks LIMIT :resultsPerPage OFFSET :offset";
+        $selectString = "SELECT * FROM national_parks LIMIT :limit OFFSET :offset";
         
         $stmt = self::$dbc->prepare($selectString);
 
-        $stmt->bindValue(':resultsPerPage', $resultsPerPage, PDO::PARAM_INT);
-        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->bindValue(":limit", (int) $limit, PDO::PARAM_INT);
+        $stmt->bindValue(":offset", (int) $offset, PDO::PARAM_INT);
 
         $stmt->execute(); 
 
-        $rows = $stmt->fetchAll(PDO::FETCH_OBJ);
+        // $rows = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-        return $rows;
+        // return $rows;
+
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $output = [];
+
+        foreach($results as $result){
+            $park = new Park();
+            $park->id = $result['id'];
+            $park->name = $result['name'];
+            $park->location = $result['location'];
+            $park->dateEstablished = $result['date_established'];
+            $park->areaInAcres=$result['area_in_acres'];
+            $park->description=$result['description'];
+
+            $output[] = $park;
+        }
+
+        return $data;
 
         }
 
@@ -163,6 +183,7 @@ class Park
         $stmt->bindValue(':date_established', $this->dateEstablished, PDO::PARAM_STR);
         $stmt->bindValue(':area_in_acres', $this->areaInAcres, PDO::PARAM_STR);    
         $stmt->bindValue(':description', $this->description, PDO::PARAM_STR);    
+        
         $stmt->execute(); 
         $this->id = self::$dbc->lastInsertId();
 
