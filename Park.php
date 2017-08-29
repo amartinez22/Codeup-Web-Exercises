@@ -1,5 +1,5 @@
 <?php
-
+require_once "Model.php";
 /**
  * A Class for interacting with the national_parks database table
  *
@@ -29,9 +29,8 @@
  *      $park->insert();
  *
  */
-class Park
+class Park extends Model
 {
-
     ///////////////////////////////////
     // Static Methods and Properties //
     ///////////////////////////////////
@@ -40,19 +39,19 @@ class Park
      * our connection to the database
      */
     public static $dbc = null;
-
+    public static $table = 'national_parks';
     /**
      * establish a database connection if we do not have one
      */
 
-    public static function dbConnect() {
-        require 'db_connect.php';
+    // public static function dbConnect() {
+    //     require 'db_connect.php';
 
-        if (! is_null(self::$dbc)) {
-            return;
-        }
-        self::$dbc = $dbc;
-    }
+    //     if (! is_null(self::$dbc)) {
+    //         return;
+    //     }
+    //     self::$dbc = $dbc;
+    // }
 
     /**
      * returns the number of records in the database
@@ -171,7 +170,7 @@ class Park
     /**
      * inserts a record into the database
      */
-    public function insert() {
+    protected function insert() {
         // TODO: call dbConnect to ensure we have a database connection
         self::dbConnect();
 
@@ -180,8 +179,8 @@ class Park
         $stmt = self::$dbc->prepare($insert);
         $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
         $stmt->bindValue(':location', $this->location, PDO::PARAM_STR);
-        $stmt->bindValue(':date_established', $this->dateEstablished, PDO::PARAM_STR);
-        $stmt->bindValue(':area_in_acres', $this->areaInAcres, PDO::PARAM_STR);    
+        $stmt->bindValue(':date_established', $this->date_established, PDO::PARAM_STR);
+        $stmt->bindValue(':area_in_acres', $this->area_in_acres, PDO::PARAM_STR);    
         $stmt->bindValue(':description', $this->description, PDO::PARAM_STR);    
         
         $stmt->execute(); 
@@ -189,9 +188,49 @@ class Park
 
     }
 
+
+    protected function update() {
+        self::dbConnect();
+
+        $updatedString = "UPDATE " . static::$table . " SET 
+        name= :name, 
+        location= :location, 
+        date_established= :date_established, 
+        area_in_acres= :area_in_acres, 
+        description= :description 
+        WHERE id= :id";
+
+        $stmt = self::$dbc->prepare($updatedString);
+
+        $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $stmt->bindValue(':location', $this->location, PDO::PARAM_STR);
+        $stmt->bindValue(':date_established', $this->date_established, PDO::PARAM_STR);
+        $stmt->bindValue(':area_in_acres', $this->area_in_acres, PDO::PARAM_STR);    
+        $stmt->bindValue(':description', $this->description, PDO::PARAM_STR);    
+        $stmt->bindValue(':id',$this->id, PDO::PARAM_INT);
+        
+        $stmt->execute(); 
+    }
+
+
+    public static function find($id)
+    {
+        self::dbConnect();
+
+        $query = "SELECT * from " . static::$table . " where id = :id";
+        $statement = self::$dbc->prepare($query);
+
+        $statement->bindValue(':id', $id, PDO:: PARAM_INT);
+        $statement->execute();
+
+        $result=$statement->fetch(PDO::FETCH_ASSOC);
+        
+       $park = new Park($result);
+
+       return $park;
+    }
+
 }
-
-
 
 
 // Insert a record into the database

@@ -1,6 +1,16 @@
 <?php
+class ParentClass {
+    public function sayHello() {
+        return 'Hello from the parent class!';
+    }
+}
 
-require_once "StringTransform.php";
+class Child extends ParentClass {
+    public function sayHello () {
+        return parent::sayHello() . ' And the child class!';
+    }
+}
 
-echo StringTransform::isLetter(StringTransform::$stringTest[1]);
+$child = new Child();
 
+var_dump($child->sayHello());

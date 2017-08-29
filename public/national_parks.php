@@ -35,7 +35,23 @@
 //     $stmt->execute(); 
 
 //     }
+function addPark(){
+    $name = Input::get('park_name');
+    $location = Input::get('park_location');
+	$areaInAcres = Input::get('area_in_acres');
+	$dateEstablished = Input::get('date_established');
+	$description = Input::get('description');
 
+
+	$park = new Park();
+	$park->name = $name;
+	$park->location = $location;
+	$park->areaInAcres = $area_in_acres;
+	$park->dateEstablished = $date_established;
+	$park->description = $description;
+	$park->insert();
+      }
+}
 function pageController()
 {
 	$data = [];
@@ -52,16 +68,7 @@ function pageController()
 	$data['parksCount'] = Park::count();
 
 	if(!empty($_POST)){
-		$park = new Park();
-
-		$park->name = Input::get('park_name');
-		$park->location =  Input::get('park_location');
-		$park->areaInAcres = Input::get('date_established');
-		$park->dateEstablished = Input::get('area_in_acres');
-		$park->description = Input::get('description');
-		$park->insert();
-
-		Park::insert();
+		addPark();
 	}
 
 	return $data;

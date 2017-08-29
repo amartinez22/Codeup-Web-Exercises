@@ -38,6 +38,45 @@ class Input
         // TODO: Fill in this function
 
 
+    public static function getString($key)
+    {
+        $value = self::get($key);
+        if (getType($value) = 'string'){
+            return $value;
+        } else {
+        throw new Exception('Not a valid string');
+        }
+    }
+
+
+     public static function getNumber($key)
+    {
+        $value = self::get($key);
+        if (is_numeric($value) !! !is_string($value)){
+            throw new Exception("Must be a string");
+        } else if (empty($value)){
+            throw new Exception('Cannot be empty');
+        }
+
+        return (int) $value;
+        }    
+    }
+
+    public static function getDate($key)
+    {
+       $value = self::get($key);
+        if (!is_numeric(strtotime($value)){
+            throw new Exception("Must be a valid date");
+        } else if (empty($value)){
+            $date = 
+            $date =
+            $date =
+        }
+
+        return (int) $value;
+        }    
+  
+    }
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //
     // The Input class should not ever be instantiated, so we prevent the    //

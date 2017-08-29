@@ -2,11 +2,11 @@
 
 class Log
 {
-	public $filename;
-	public $handle;
+	private $filename;
+	private $handle;
 
 
-	public function logMessage($logLevel,$message)
+	protected function logMessage($logLevel,$message)
 	{
 
 		$stringToWrite = date('Y-m-d h:i:s') . ' ' . $logLevel . ' ' . $message . PHP_EOL;
@@ -33,6 +33,33 @@ class Log
 		$this->filename = $prefix . '-' . date("Y-m-d") . ".log";
 	//Open the $filename for appending and assign the file pointer to the property $handle.
 		$this->handle = fopen($this->filename, 'a');
+	}
+
+	public function getFileName()
+	{
+		return $this->filename = $filename;
+	}
+	
+
+	public function getHandle()
+	{
+		return $this->handle = $handle;
+	}
+
+	public function setFileName($filename)
+	{
+		if (!is_string($prefix)){
+			$prefix = 'log';
+		}
+
+		$this->filename = $prefix . '-' . date("Y-m-d") . ".log";
+		$this->handle = fopen($this->filename, 'a');
+	
+	}
+
+	public function setHandle($handle)
+	{
+
 	}
 
 	public function __deconstruct()
